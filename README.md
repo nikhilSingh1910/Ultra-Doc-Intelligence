@@ -2,6 +2,8 @@
 
 A POC AI system that allows users to upload logistics documents (Rate Confirmations, BOLs, Invoices, Shipment Instructions) and interact with them using natural language questions. Built as an AI assistant for Transportation Management Systems (TMS).
 
+**Live Demo:** [http://34.28.16.197:8501/](http://34.28.16.197:8501/)
+
 ## Evaluation Results (3 Real Logistics PDFs)
 
 ```
