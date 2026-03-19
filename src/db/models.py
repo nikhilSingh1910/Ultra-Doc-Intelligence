@@ -23,7 +23,7 @@ class DocumentModel(Base):
     document_id = Column(String(100), unique=True, nullable=False, index=True)
     filename = Column(String(500), nullable=False)
     file_type = Column(String(10), nullable=False)
-    text = Column(Text(length=16_777_215), nullable=False)  # MEDIUMTEXT
+    text = Column(Text, nullable=False)
     num_chunks = Column(Integer, default=0)
     num_pages = Column(Integer, default=1)
     status = Column(String(20), default="processed")
