@@ -1,0 +1,44 @@
+FREIGHT INVOICE
+
+Invoice Number: INV-2024-03150
+Invoice Date: March 25, 2024
+Due Date: April 24, 2024
+Payment Terms: Net 30
+
+BILL TO:
+ACME Manufacturing Inc.
+123 Industrial Blvd
+Chicago, IL 60601
+Attn: Accounts Payable
+
+CARRIER: Swift Transportation
+MC#: MC-123456
+
+SHIPMENT DETAILS:
+Reference Number: LOAD-2024-78543
+BOL#: BOL-112233
+PRO#: PRO-445566
+Pickup Date: March 15, 2024
+Delivery Date: March 17, 2024
+
+ORIGIN: Chicago, IL 60601
+DESTINATION: Dallas, TX 75201
+
+Equipment Type: 53' Dry Van
+Mode: FTL
+Weight: 42,000 lbs
+Miles: 920
+
+CHARGES:
+Line Haul Rate:     $2,450.00
+Fuel Surcharge:       $175.00
+Detention (2 hrs):    $150.00
+Lumper Fee:             $0.00
+                    ---------
+TOTAL DUE:          $2,775.00
+Currency: USD
+
+REMIT PAYMENT TO:
+Swift Transportation
+PO Box 99887
+Phoenix, AZ 85001

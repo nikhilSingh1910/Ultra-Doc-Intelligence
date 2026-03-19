@@ -1,0 +1,26 @@
+# Render Blueprint for deployment
+services:
+  - type: web
+    name: ultra-doc-intelligence-api
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn src.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: CHROMA_PERSIST_DIR
+        value: /tmp/data/chroma
+      - key: UPLOAD_DIR
+        value: /tmp/data/uploads
+
+  - type: web
+    name: ultra-doc-intelligence-ui
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: streamlit run ui/app.py --server.port $PORT --server.address 0.0.0.0
+    envVars:
+      - key: API_URL
+        fromService:
+          type: web
+          name: ultra-doc-intelligence-api
+          property: host

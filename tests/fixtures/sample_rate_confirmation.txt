@@ -1,0 +1,42 @@
+RATE CONFIRMATION
+
+Load Number: LOAD-2024-78543
+Date: March 14, 2024
+
+CARRIER INFORMATION:
+Carrier: Swift Transportation
+MC#: MC-123456
+DOT#: 1234567
+Contact: Jane Doe (555) 123-4567
+
+SHIPPER:
+ACME Manufacturing Inc.
+123 Industrial Blvd
+Chicago, IL 60601
+Contact: John Smith (312) 555-0100
+
+CONSIGNEE:
+Best Buy Distribution Center
+456 Commerce Drive
+Dallas, TX 75201
+Contact: Mike Johnson (214) 555-0200
+
+PICKUP: March 15, 2024 08:00 AM
+DELIVERY: March 17, 2024 02:00 PM
+
+EQUIPMENT: 53' Dry Van
+MODE: FTL (Full Truckload)
+
+COMMODITY: Consumer Electronics
+WEIGHT: 42,000 lbs
+PIECES: 24 pallets
+
+RATE: $2,450.00 USD
+FUEL SURCHARGE: $175.00
+TOTAL: $2,625.00
+
+SPECIAL INSTRUCTIONS:
+- Appointment required at delivery
+- Driver must have valid photo ID
+- No-touch freight
+- Temperature controlled not required

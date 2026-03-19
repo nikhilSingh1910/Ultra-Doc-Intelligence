@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+*.egg
+.venv/
+venv/
+env/
+
+# Environment
+.env
+
+# Data
+data/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# ChromaDB
+chroma_data/
+
+# Claude Code
+.claude/
+CLAUDE.md
+
+# Skill test PDF (not part of the application)
+Skill Test - AI Engineer.pdf
+
+# Sample PDFs in project root (duplicates of tests/fixtures/)
+BOL53657_billoflading.pdf
+LD53657-Carrier-RC.pdf
+LD53657-Shipper-RC.pdf

@@ -1,0 +1,39 @@
+BILL OF LADING
+Straight Bill of Lading - Short Form
+
+Date: 2024-03-20
+BOL#: BOL-998877
+PRO#: PRO-554433
+
+SHIP FROM:
+Name: Global Electronics Ltd.
+Address: 789 Factory Lane, Detroit, MI 48201
+SID#: SID-001122
+
+SHIP TO:
+Name: Walmart Distribution Center #4455
+Address: 321 Logistics Way, Memphis, TN 38118
+CID#: CID-334455
+
+THIRD PARTY FREIGHT CHARGES BILL TO:
+Name: Freight Solutions Inc.
+Address: 100 Broker St, Suite 200, Atlanta, GA 30301
+
+CARRIER NAME: XPO Logistics
+Trailer Number: XPOU-445566
+Seal Number: SEAL-7788
+
+HANDLING UNIT INFORMATION:
+| QTY | Type   | Weight     | Class | NMFC#     | Description              |
+|-----|--------|------------|-------|-----------|--------------------------|
+| 12  | Pallet | 18,500 lbs | 70    | 116030-2  | Electronic Components    |
+| 8   | Pallet | 12,300 lbs | 85    | 116030-4  | Printed Circuit Boards   |
+
+TOTAL PIECES: 20 pallets
+TOTAL WEIGHT: 30,800 lbs
+
+FREIGHT CHARGES: $1,875.00 USD
+
+SPECIAL INSTRUCTIONS:
+Dock delivery required. Notify consignee 24 hours prior to delivery.
+Hazmat: No
