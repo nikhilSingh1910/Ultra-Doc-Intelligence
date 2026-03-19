@@ -22,13 +22,12 @@ def init_db() -> None:
     global _engine, _SessionLocal
     settings = get_settings()
 
-    _engine = create_engine(
-        settings.database_url,
-        pool_size=5,
-        max_overflow=10,
-        pool_recycle=3600,
-        echo=False,
-    )
+    # SQLite doesn't support connection pooling options
+    engine_kwargs = {"echo": False}
+    if not settings.database_url.startswith("sqlite"):
+        engine_kwargs.update(pool_size=5, max_overflow=10, pool_recycle=3600)
+
+    _engine = create_engine(settings.database_url, **engine_kwargs)
     _SessionLocal = sessionmaker(bind=_engine)
 
     # Create tables (idempotent)
