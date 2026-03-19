@@ -139,7 +139,7 @@ Raw text -> Per-Page Split -> Section Detection -> Classify -> Merge Small
 Multi-page documents are chunked page-by-page independently. This preserves accurate page numbers in Q&A responses ("Source: page 2").
 
 **Stage 2: Section Header Detection**
-Recognizes 25+ logistics-specific headers (`SHIPPER`, `CONSIGNEE`, `CARRIER INFORMATION`, `RATE CONFIRMATION`, `BILL OF LADING`, `PICKUP`, `DELIVERY`, `EQUIPMENT`, `HANDLING UNIT INFORMATION`, etc.). Also detects ALL-CAPS lines as headers, with safeguards to exclude data lines (amounts, table rows, KV pairs). Each header starts a new chunk so semantically related content stays together.
+Recognizes 25 logistics-specific headers (`SHIPPER`, `CONSIGNEE`, `CARRIER INFORMATION`, `RATE CONFIRMATION`, `BILL OF LADING`, `PICKUP`, `DELIVERY`, `EQUIPMENT`, `HANDLING UNIT INFORMATION`, etc.). Also detects ALL-CAPS lines as headers, with safeguards to exclude data lines (amounts, table rows, KV pairs). Each header starts a new chunk so semantically related content stays together.
 
 **Stage 3: Table Preservation**
 Pipe-delimited (`| Col1 | Col2 |`) and tab-delimited table rows are detected and kept as atomic blocks. Table rows never trigger section breaks, and table-type chunks are **never split** even if oversized — splitting a table mid-row makes it unreadable and hurts retrieval.
@@ -362,30 +362,6 @@ Extract structured shipment data from an uploaded document.
 
 ---
 
-## Improvement Ideas
-
-1. **OCR Integration**: Add Tesseract or Azure Document Intelligence for scanned PDFs and image-based documents.
-
-2. **Cross-Encoder Reranking**: Replace keyword-based reranking with a cross-encoder model (e.g., `cross-encoder/ms-marco-MiniLM-L-6-v2`) for higher retrieval accuracy.
-
-3. **Multi-Document Q&A**: Support querying across multiple uploaded documents for comparative analysis ("Which shipment has the highest rate?").
-
-4. **Fine-Tuned Embeddings**: Train domain-specific embeddings on logistics documents for better semantic understanding of freight terminology.
-
-5. **Streaming Responses**: Implement SSE/WebSocket streaming for LLM responses to improve perceived latency.
-
-6. **Caching**: Cache embeddings and extraction results to avoid recomputation on repeated queries.
-
-7. **Async SQLAlchemy**: Migrate from `asyncio.to_thread()` wrappers to native async SQLAlchemy for database operations.
-
-8. **Field-Level Extraction Confidence**: Report per-field confidence scores rather than a single document-level extraction confidence.
-
-9. **Few-Shot Extraction**: Add few-shot examples to the extraction prompt for improved accuracy on edge-case document formats.
-
-10. **Cross-Page Table Merging**: Detect tables that span page boundaries and merge them before chunking.
-
----
-
 ## Project Structure
 
 ```
@@ -401,7 +377,7 @@ ultra-doc-intelligence/
 ├── ui/                # Streamlit application (3 tabs: Upload, Ask, Extract)
 ├── scripts/           # E2E demo/evaluation script (16 Q&A + extraction tests)
 ├── tests/             # 133 unit and integration tests (TDD)
-│   └── fixtures/      # Sample logistics documents (Rate Confirmations, BOLs, Invoices)
+│   └── fixtures/      # Sample logistics documents (3 PDFs + 3 TXT samples)
 ├── Dockerfile
 ├── docker-compose.yml # Backend + UI + MySQL (health checks, dependency ordering)
 ├── render.yaml        # Render.com deployment config
@@ -417,5 +393,5 @@ ultra-doc-intelligence/
 - **Database**: MySQL 8.0 (SQLAlchemy ORM) for document record persistence
 - **Document Parsing**: pdfplumber (primary) + PyPDF2 (fallback) + python-docx
 - **UI**: Streamlit (3 tabs: Upload, Ask Questions, Structured Extraction)
-- **Testing**: pytest — 133 tests across 14 test files, TDD
+- **Testing**: pytest — 133 tests across 13 test files, TDD
 - **Deployment**: Docker Compose (MySQL + Backend + UI with health checks), Render.com
