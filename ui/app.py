@@ -146,12 +146,14 @@ with tab2:
     else:
         st.info(f"Querying: **{st.session_state.get('filename', '')}**")
 
-        question = st.text_input(
-            "Your question",
-            placeholder="e.g., What is the carrier rate? Who is the consignee?",
-        )
+        with st.form("ask_form", clear_on_submit=False):
+            question = st.text_input(
+                "Your question",
+                placeholder="e.g., What is the carrier rate? Who is the consignee?",
+            )
+            submitted = st.form_submit_button("Ask", type="primary")
 
-        if question and st.button("Ask", type="primary"):
+        if submitted and question:
             with st.spinner("Retrieving and generating answer..."):
                 try:
                     resp = requests.post(
