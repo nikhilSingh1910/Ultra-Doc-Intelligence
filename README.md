@@ -362,6 +362,30 @@ Extract structured shipment data from an uploaded document.
 
 ---
 
+## Improvement Ideas
+
+1. **OCR Integration**: Add Tesseract or Azure Document Intelligence for scanned PDFs and image-based documents.
+
+2. **Cross-Encoder Reranking**: Replace keyword-based reranking with a cross-encoder model (e.g., `cross-encoder/ms-marco-MiniLM-L-6-v2`) for higher retrieval accuracy.
+
+3. **Multi-Document Q&A**: Support querying across multiple uploaded documents for comparative analysis ("Which shipment has the highest rate?").
+
+4. **Fine-Tuned Embeddings**: Train domain-specific embeddings on logistics documents for better semantic understanding of freight terminology.
+
+5. **Streaming Responses**: Implement SSE/WebSocket streaming for LLM responses to improve perceived latency.
+
+6. **Caching**: Cache embeddings and extraction results to avoid recomputation on repeated queries.
+
+7. **Async SQLAlchemy**: Migrate from `asyncio.to_thread()` wrappers to native async SQLAlchemy for database operations.
+
+8. **Field-Level Extraction Confidence**: Report per-field confidence scores rather than a single document-level extraction confidence.
+
+9. **Few-Shot Extraction**: Add few-shot examples to the extraction prompt for improved accuracy on edge-case document formats.
+
+10. **Cross-Page Table Merging**: Detect tables that span page boundaries and merge them before chunking.
+
+---
+
 ## Project Structure
 
 ```
